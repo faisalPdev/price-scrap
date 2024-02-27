@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+    <body class="bg-light">
+        <!--navvbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark " id="navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white fw-bold" href="#">Price <span class="text-primary">Comparison</span></a>
+              
+             
+                <ul class="navbar-nav mx-auto  " style="--bs-scroll-height: 100px;font-size: 19px;" id="navbaracontents">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link active text-white"  href="/userview">Search Product</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/tracking">Price Track</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/searchHistory">Search History</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Tracking  History</a>
+                  </li>
+                </ul>
+                <div class="lefttopbut" style="justify-content: space-between;padding: 20px; ">
+                    {% if user.is_authenticated %}
+                      <span class="text-white fw-bold">Hello {{fname}}</span>
+          
+                      <button class="btn btn-outline-primary "><a href="{% url 'logout'%}" class="text-decoration-none text-white">Log Out</a> </button>
+                     {%endif%}
+                
+                </div>
+
+                
+            </div>
+          </nav>
+        <section>
+       <div class=" col col-md-6 mx-auto">
+        <h3 class="page-header text-primary text-center p-5 ">Search History</h3>
+        <table class="table table-success table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>s.No</th>
+                    <!--<th>PRODUCT NAME</th>-->
+                    <th>WEBSITE</th>
+                    <th>USER EMAIL</th>
+                    <th>USER PRICE</th>
+                    
+                </tr>
+            </thead>
+            {% for data in datas %}
+            <tbody>
+               <tr>
+                <td>{{forloop.counter}}</td>
+                <!--<td>{{data.url}}</td>-->
+                <td>{{data.website}}</td>
+                <td>{{data.user_email}}</td>
+                <td>{{data.user_price}}</td>
+               
+               </tr>
+
+                
+            </tbody>
+            {%endfor%}
+        </table>
+       </div>
+    </section>
+    <br>
+          <br><br><br>
+         <!--footer-->
+         <section>
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white positon-fixed-bottom"
+            style="background-color: #000000"
+            >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">
+                Price <span class="text-primary">Comparison</span>
+              </h6>
+              <p>
+                Here you can use rows and columns to organize your footer
+                content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Ecommerce Websites</h6>
+              <p>
+                <a class="text-white text-decoration-none">Flipkart</a>
+              </p>
+              <p>
+                <a class="text-white text-decoration-none">Amazon</a>
+              </p>
+              <p>
+                <a class="text-white text-decoration-none">Croma</a>
+              </p>
+              <p>
+                <a class="text-white text-decoration-none">Gadgets Now</a>
+              </p>
+              <p>
+                <a class="text-white text-decoration-none">Tata neu</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">
+                Useful links
+              </h6>
+              <p>
+                <a class="text-white">Your Account</a>
+              </p>
+              <p>
+                <a class="text-white">Become an Affiliate</a>
+              </p>
+              <p>
+                <a class="text-white">Shipping Rates</a>
+              </p>
+              <p>
+                <a class="text-white">Help</a>
+              </p>
+            </div>
+  
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+              <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+              <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+  
+        <hr class="my-3">
+  
+        <!-- Section: Copyright -->
+        <section class="p-3 pt-0">
+          <div class="row d-flex align-items-center">
+            <!-- Grid column -->
+            <div class="col-md-7 col-lg-8 text-center text-md-start">
+              <!-- Copyright -->
+              <div class="p-3">
+                © 2023 Copyright:
+                <a class="text-white text-decoration-none" href="#"
+                   >Faisal P</a
+                  >
+              </div>
+              <!-- Copyright -->
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+              <!-- Facebook -->
+              <a
+                 class="btn btn-outline-light btn-floating m-1"
+                 class="text-white"
+                 role="button"
+                 ><i class="fab fa-facebook-f"></i
+                ></a>
+  
+              <!-- Twitter -->
+              <a
+                 class="btn btn-outline-light btn-floating m-1"
+                 class="text-white"
+                 role="button"
+                 ><i class="fab fa-twitter"></i
+                ></a>
+  
+              <!-- Google -->
+              <a
+                 class="btn btn-outline-light btn-floating m-1"
+                 class="text-white"
+                 role="button"
+                 ><i class="fab fa-google"></i
+                ></a>
+  
+              <!-- Instagram -->
+              <a
+                 class="btn btn-outline-light btn-floating m-1"
+                 class="text-white"
+                 role="button"
+                 ><i class="fab fa-instagram"></i
+                ></a>
+            </div>
+            <!-- Grid column -->
+          </div>
+        </section>
+        <!-- Section: Copyright -->
+      </div>
+      <!-- Grid container -->
+    </footer>
+    <!-- Footer -->
+         </section>
+  <!-- End of .container -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+    <body>
+        <section class="vh-100" style="background-color: #333333;">
+            <div class="container py-5 h-100 ">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                  <div class="card shadow-2-strong " style="border-radius: 2rem;">
+                    <div class="card-body p-5 text-center ">
+                    <form method="post">
+                      {% csrf_token %}
+                      <h3 class="mb-5">Sign In</h3>
+          
+                      <div class="form-outline mb-4">
+                        <input type="text" id="username" class="form-control form-control-lg" placeholder="User name" name="username"/>
+                       
+                      </div>
+          
+                      
+    
+                      <div class="form-outline mb-4">
+                        <input type="password" id="pass1" class="form-control form-control-lg" placeholder="Password" name="pass1"/>
+                       
+                      </div>
+                      
+          
+          
+          
+          
+          
+                      <!-- Checkbox -->
+                      
+          
+                      <button class="btn btn-primary btn-lg btn-block h-100 w-100" type="submit">Sign In</button>
+          
+                      
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+        <script src="/static/js/bootstrap.js" ></script>
+        <!---Font awesome icons-->
+        <script src="https://kit.fontawesome.com/6aeb7974c2.js" crossorigin="anonymous"></script>
+        <script src="" async defer></script>
+    </body>
+</html>

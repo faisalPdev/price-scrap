@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/static/css/style1.css">
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+        
+
+        
+    </head>
+    <body>
+      <!-- Section: Design Block -->
+      <section class="vh-100" style="background-color: #333333;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 2rem;">
+                <div class="card-body p-5 text-center">
+                  <form method="POST"   id="form">
+                    {% csrf_token %}
+                  <h3 class="mb-5">Sign Up</h3>
+      
+                  <div class="form-outline mb-4 ">
+                    <input type="text" id="username" class="form-control form-control-lg" placeholder="User name" name="username" />
+                    <div id="erorr" class="text-start text-danger m-1 fw-bold"></div>
+                  </div>
+      
+                  <div class="form-outline mb-4">
+                    <input type="text" id="fname" class="form-control form-control-lg" placeholder="First name" name="fname" />
+                    <div id="erorr" class="text-start text-danger m-1 fw-bold"></div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="lname" class="form-control form-control-lg" placeholder="Last name" name="lname" />
+                    <div id="erorr" class="text-start text-danger m-1 fw-bold"></div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="email" class="form-control form-control-lg" placeholder="Email address" name="email"/>
+                    <div id="erorr" class="text-start text-danger m-1 fw-bold"></div>
+                   
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="pass1" class="form-control form-control-lg" placeholder="Password" name="pass1"/>
+                    <div id="erorr" class="text-start text-danger m-1 fw-bold"></div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="pass2" class="form-control form-control-lg" placeholder="Confirm pasword" name="pass2"/>
+                    <div id="erorr" class="text-start text-danger m-1 fw-bold"></div>
+                  </div>
+      
+      
+      
+      
+      
+                  <!-- Checkbox -->
+                  
+      
+                  <button class="btn btn-primary btn-lg btn-block mb-4 h-100 w-100"  type="submit">Sign Up</button>
+      
+                  
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  <!-- Section: Design Block -->
+       <!-- <script type="text/javascript">
+        const form=document.querySelector('#form')
+        const user=document.querySelector('#username');
+        const fname=document.querySelector('#fname');
+        const lname=document.querySelector('#lname');
+        const email=document.querySelector('#email');
+        const pass=document.querySelector('#pass1');
+        const conpass=document.querySelector('#pass2');
+
+        form.addEventListener('submit',(e)=>{
+         
+          validateInputs();
+        })
+        function validateInputs(){
+          const userval=user.value.trim()
+          const fnameval=fname.value.trim()
+          const lnameval=lname.value.trim()
+          const emailval=email.value.trim()
+          const passval=pass.value.trim()
+          const conpassval=conpass.value.trim()
+
+          if(userval===''){
+            setErorr(username,'username is required')
+          }
+          else{
+            setSucess(username)
+          }
+
+          if(fnameval===''){
+            setErorr(fname,'firstname is required')
+          }
+          else{
+            setSucess(fname)
+          }
+
+          if(lnameval===''){
+            setErorr(lname,'lastname is required')
+          }
+          else{
+            setSucess(lname)
+          }
+
+          if(emailval===''){
+            setErorr(email,'Email is required')
+          }
+          else if(!validateEmail(emailval)){
+            setErorr(email,'please enter a vvalid email')
+
+          }
+          else{
+            setSucess(email)
+          }
+
+          if(passval===''){
+            setErorr(pass1,'Password is required')
+          }
+          else if(passval.length<8){
+            setErorr(pass1,"password must be at least 8 characters")
+          }
+          else{
+            setSucess(pass1)
+          }
+
+          if(conpassval===''){
+            setErorr(pass2,'Confirm password is required')
+          }
+          else if(conpassval!=passval){
+            setErorr(pass2,'Password does not match')
+          }
+          else{
+            setSucess(pass2)
+          }
+        }
+        function setErorr(element,message){
+          const inputGroup=element.parentElement;
+          const erorrElement=inputGroup.querySelector('#erorr');
+          erorrElement.innerText=message;
+        }
+
+        function setSucess(element){
+          const inputGroup=element.parentElement;
+          const erorrElement=inputGroup.querySelector('#erorr');
+          erorrElement.innerText='';
+        }
+        const validateEmail=(email)=>{
+          return String(email)
+          .toLowerCase()
+          .match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/);
+        }
+       </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+        <script src="/static/js/bootstrap.js" ></script>
+        <!---Font awesome icons-->
+        <script src="https://kit.fontawesome.com/6aeb7974c2.js" crossorigin="anonymous"></script>
+    </body>
+
+
+
+
+    </html>
+
+
+           
+      
